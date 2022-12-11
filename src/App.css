@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  min-width: 100vw;
   min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  background-color:  white;
+  display: flex;
+  overflow-x: hidden;
+  padding: 0px 30px;
+}
+
+.menuContainer{
+  width: 100px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 30px 13px;
+  /* background-color: rgb(118, 115, 115); */
+}
+
+
+.logo{
+  width: 70px;
+  min-width: 40px;
+}
+
+.subMenu{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.iconContainer{
+  width: 35px;
+  height: 35px;
+  min-width: 20px;
+  border-radius: 40%;
+  border: 2px solid #717273 ;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  align-items: center;
+  box-shadow: 0px 1px 10px gray;
+  margin: 15px 0;
+  transition: 0.4s;
+}
+:root{
+  color: #717273;
+  /* font-size: 2px !important;
+  width: 10px ;
+  height: 10px ; */
+ /* padding: 3px; */
+}
+.iconContainer:hover , .iconContainer.active{
+background-color: red;
 }
 
-.App-link {
-  color: #61dafb;
+main{
+  flex: 1;
+  height: 100%;
+  padding-top: 30px;
+  margin-top: 130px;
+  margin-left: 140px;
+  /* //background-color: rgb(75, 101, 75); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchBox{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border: 2px solid #757677;
+  padding: 6px 15px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 9px #717273;
+  justify-content: center;
+}
+
+.searchBox input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: #757677;
+  font-weight: bold;
+  outline: none;
+}
+
+.mainContainer{
+  flex:1;
+  height: auto;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(autofill,300px);
+  grid-auto-rows: 10px;
+  /* justify-content: center; */
+}
+
+.pin{
+  border-radius: 16px;
+  background: #444;
+  margin: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pin .content{
+  position: absolute;
+  height: 50px;
+  background: solid black;
+  bottom: 0px;
+  width: 100%;
+  backdrop-filter: blur(15px);
+  display: flex;
+  /* //color: grey; */
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-content: center;
+}
+
+.pin:hover .content{
+  bottom:0;
+  transition: bottom 0.3s;
+}
+.pin .mainPic{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.pin.small{
+  grid-row-end: span 26; 
+}
+.pin.medium{
+   grid-row-end: span 33; 
+}
+.pin.large{
+   grid-row-end: span 45;
+
+}
+
+
+@media screen and (max-width:480px) {
+  .App{
+    padding: 0px 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .menuContainer{
+    padding: 30px 0px;
+    width: unset;
+    left: 15px;
   }
 }
+/* .iconContainer:hover .:root:hover{
+  color: white !important;
+} */
